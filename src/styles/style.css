@@ -10,6 +10,7 @@ body {
   width:      100%;
   margin:     0 auto;
   padding:    10px 10px 0;
+  z-index: 2;
 }
 
 #start {
@@ -21,7 +22,6 @@ body {
   top: 0;
   background: url('../assets/img/background-book.jpg');
   margin-left: 430px;
-  z-index: -1;
 }
 
 ul > li {
@@ -51,4 +51,25 @@ a {
 
 h2 {
   text-align: center;
+}
+
+.yellow {
+  background: yellow;
+  color: blue;
+}
+.green {
+  background: green;
+  color: red;
+}
+.blue {
+  background: blue;
+  color: white;
+}
+.grey {
+  background: grey;
+  color: blueviolet;
+}
+.red {
+  background: red;
+  color: greenyellow;
 }
