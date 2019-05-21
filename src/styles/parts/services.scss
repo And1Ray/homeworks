@@ -1,0 +1,41 @@
+@keyframes js-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mod-only-lg {
+  @include w-to($screen-lg) {display: none !important;}
+}
+
+.mod-no-sm {
+  @include w-from($screen-sm) {display: none !important;}
+}
+
+.mod-no-lg {
+  @include w-from($screen-lg) {display: none !important;}
+}
+
+.mod-visually-hidden {
+  position: absolute;
+  width:    1px;
+  height:   1px;
+  margin:   -1px;
+  border:   0;
+  padding:  0;
+  clip:     rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+.js-hidden {
+  visibility: hidden;
+}
+
+.js-ready {
+  animation:  js-in $transition-normal ease-in;
+  visibility: visible;
+}

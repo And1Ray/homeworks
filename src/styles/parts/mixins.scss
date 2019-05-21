@@ -1,0 +1,48 @@
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder {@content}
+  ::-moz-placeholder {@content}
+  :-ms-input-placeholder {@content}
+}
+
+@mixin font-size($size: inherit, $spacing: auto, $height: normal) {
+  font-size:      $size;
+  letter-spacing: $spacing;
+  line-height:    $height;
+}
+
+@mixin inc-click-area($px: 10px) {
+  position: relative;
+  &:after {
+    content:  '';
+    position: absolute;
+    top:      -$px; bottom: -$px;
+    left:     -$px; right: -$px;
+  }
+}
+
+@mixin display-flex($direction: row, $align: flex-start, $justify: flex-start) {
+  display:         flex;
+  flex-direction:  $direction;
+  align-items:     $align;
+  justify-content: $justify;
+}
+
+@mixin w-from($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}
+
+@mixin w-to($screen) {
+  @media (max-width: $screen - 1px) {
+    @content;
+  }
+}
+
+@mixin w-range($screen1, $screen2) {
+  @media (min-width: $screen1) and (max-width: $screen2 - 1px) {
+    @content;
+  }
+}
+
