@@ -10,6 +10,10 @@
     width: 96%;
     max-width: 950px;
   }
+  @include w-to(992px) {
+    width: 96%;
+    max-width: 742px;
+  }
   @include w-to(768px) {
     width: 96%;
     max-width: 520px;
