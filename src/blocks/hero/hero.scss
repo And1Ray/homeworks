@@ -7,8 +7,8 @@
   display: flex;
   justify-content: center;
   @include w-to(1200px) {
-    padding-top: 55px;
-    padding-bottom: 52px;
+    padding-top: 41px;
+    padding-bottom: 44px;
   }
   &-block {
     display: flex;
@@ -23,7 +23,7 @@
     @include w-to(1200px) {
       padding-right: 0;
       padding-top: 0;
-      margin-bottom: 18px;
+      margin-bottom: 38px;
     }
     @include w-range(567px, 1200px) {
       display: flex;
@@ -78,6 +78,7 @@
         }
       }
       &:last-child {
+        margin-bottom: 0;
         .hero-list__text {
           margin-top: -6px;
         }

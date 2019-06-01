@@ -1,0 +1,32 @@
+<section class="offer">
+  <div class="container offer__container">
+
+    <div class="offer__block">
+      <h2 class="offer__title">Мы&nbsp;бесплатно разработаем
+        дизайн-проект Вашего жилья
+        и&nbsp;реализуем его!
+      </h2>
+
+      <span class="offer__subtitle">
+      Оставьте заявку на разработку
+      бесплатного дизайн-проекта!
+    </span>
+
+      {% include '../inputs/inputs.twig' %}
+
+      {% include '../button/button.twig' with {
+        class: 'offer__button',
+        text: 'Получить бесплатный дизайн-проект'
+      }%}
+
+      <div class="offer__feedback">
+        <span>Наш менеджер перезвонит Вам в&nbsp;течение 60&nbsp;секунд</span>
+        <div class="mod-right">
+          <span>или перезвоните нам сами</span>
+          <span class="mod-phone">+7 (495) 42-251-31</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="assets/img/practic/offer-bg.jpg" alt="" class="offer__bg">
+</section>

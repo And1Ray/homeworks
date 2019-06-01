@@ -9,6 +9,9 @@
       <span class="header__number">+7 (495) 42-251-31</span>
     </div>
 
-    <button type="button" class="header__btn">Перезвоните мне</button>
+    {% include '../button/button.twig' with {
+      text: 'Перезвоните мне',
+      class: 'header__button'
+    }%}
   </div>
 </header>
