@@ -1,6 +1,10 @@
 .inputs {
   margin-top: 30px;
   margin-bottom: 28px;
+  @include w-to(991px) {
+    display: flex;
+    flex-direction: column;
+  }
 
   @include w-to(567px) {
     margin-top: 25px;
@@ -29,15 +33,13 @@
         margin-bottom: 8px;
         margin-right: 0;
       }
-      @include w-range(768px, 991px) {
-        margin-bottom: 0;
-        margin-right: 9px;
-      }
     }
-    @include w-to(768px) {
-      width: 100%;
-      max-width: 252px;
-      padding-left: 19px;
+    @include w-to(1200px) {
+      width: 365px;
+      max-width: initial;
+    }
+    @include w-to(567px) {
+      width: 248px;
     }
   }
 }

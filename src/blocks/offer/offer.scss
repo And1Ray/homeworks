@@ -23,6 +23,12 @@
     }
     @include w-to(991px) {
       padding-right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include w-to(567px) {
+      align-items: flex-start;
     }
   }
   &__bg {
@@ -67,10 +73,15 @@
     min-height: 70px;
     font-size: 16px;
     margin-bottom: 26px;
+    @include w-to(1200px) {
+      width: 392px;
+    }
     @include w-to(567px) {
       font-size: 14px;
       border-radius: 10px;
       margin-bottom: 22px;
+      width: 275px;
+      padding: 0 50px;
     }
   }
 
@@ -86,6 +97,9 @@
     @include w-to(1200px) {
       flex-direction: column;
       align-items: flex-start;
+    }
+    @include w-to(567px) {
+      margin-left: 4px;
     }
 
     & > span {
