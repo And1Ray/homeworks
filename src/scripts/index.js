@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', () => {
 
   const popup = document.querySelector('.js-popup');
@@ -15,5 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
   closeBtnPopup.addEventListener('click', () => {
     popup.classList.remove('popup_active');
   });
+
+});*/
+
+$(document).ready(() => {
+  const $popup = $('.js-popup');
+  const $openBtnPopup = $('.js-open-popup');
+  const $closeBtnPopup = $('.js-close-popup');
+
+  $openBtnPopup.click(() => {
+    $popup.addClass('popup_active');
+
+    setTimeout(() => {
+      $popup.removeClass('popup_active');
+    }, 5000);
+  });
+
+  $closeBtnPopup.click(() => { $popup.removeClass('popup_active'); })
+
+  const $btnUp = $('.js-btn-up');
+
+  $btnUp.click(function() {
+    $('html, body').animate({scrollTop: 0},500);
+  })
 
 });
