@@ -114,7 +114,7 @@ gulp.task('build:assets', () => {
 });
 
 // Вотчеры
-gulp.task('watch:build', ['server', 'build:html', 'build:styles', 'build:assets'],
+gulp.task('watch:build', ['server', 'build:html', 'build:styles', 'build:assets', 'build:scripts'],
   () => {
     gulp.watch([
         'src/pages/**/*.twig',
@@ -129,10 +129,15 @@ gulp.task('watch:build', ['server', 'build:html', 'build:styles', 'build:assets'
       ],
       ['build:styles']);
     gulp.watch('src/assets/**/*.*', ['build:assets']);
+
+    watch('src/scripts/**/*.*', batch((e, end) => {
+      gulp.start('build:scripts', end);
+    }));
   });
 gulp.task('watch:update', () => {
   gulp.watch([
     'build/**/*.*',
+    'build/scripts/**/*.*',
     '!build/styles/**/*.*'
   ], ['server:refresh']);
 
