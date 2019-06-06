@@ -67,6 +67,9 @@ gulp.task('build:html', () => {
     .pipe(gulp.dest('build/'));
 });
 gulp.task('build:styles', () => {
+  gulp.src('src/styles/vendor/*.css')
+    .pipe(gulp.dest('build/styles/vendor/'));
+
   gulp.src('src/styles/*.scss')
     .pipe(plumber(handleError))
     .pipe(sassGlob())

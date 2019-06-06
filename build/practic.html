@@ -28,7 +28,8 @@
 </head>
 
 
-<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/vendor/owl.carousel.min.css">
+<link rel="stylesheet" href="styles/vendor/owl.theme.default.min.css">
 
 
 <style>
@@ -136,9 +137,52 @@
     </div>
   </div>
 
+
+  <section class="portfolio">
+
+
+    <div class="container">
+      <div class="portfolio__block">
+        <div class="b-title">
+          <p>Работая с 2007 года,<br>
+            мы сделали более 500 ремонтов в квартирах и домах
+          </p>
+        </div>
+
+        <div class="slider">
+
+          <div class="slider__wrap js-slider owl-carousel owl-theme">
+
+            <div class="slide__item">
+              <img src="assets/img/practic/slide-1.jpg" alt="slide-1" class="slideer-slide">
+            </div>
+            <div class="slide__item">
+              <img src="assets/img/practic/slide-2.jpg" alt="slide-2" class="slideer-slide">
+            </div>
+            <div class="slide__item">
+              <img src="assets/img/practic/slide-3.jpg" alt="slide-3" class="slideer-slide">
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="arrows">
+          <button class="prev"><img src="assets/img/practic/slide-arrow.png" alt=""></button>
+          <button class="next"><img src="assets/img/practic/slide-arrow.png" alt=""></button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
   <div class="button-up js-btn-up"><span>Наверх</span></div>
 
   <script src="scripts/vendor/jquery-3.4.1.min.js"></script>
+  <script src="scripts/vendor/owl.carousel.min.js"></script>
   <script src="scripts/bundle.js"></script>
 
 </body>

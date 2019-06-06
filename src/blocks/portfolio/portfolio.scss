@@ -1,0 +1,53 @@
+.portfolio {
+  background-color: #f5f5f5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &:before {
+    content: '';
+    background: url("../assets/img/practic/bg-portfolio.png");
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    @include w-to(768px) {
+      display: none;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 86px 0;
+    @include w-to(567) {
+      padding-top: 29px;
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.b-title {
+  color: #333333;
+  font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 790px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 93px;
+  z-index: 1;
+  @include w-to(567px) {
+    font-size: 18px;
+    padding-bottom: 23px;
+    p {
+      line-height: 21px;
+      margin-top: 12px;
+    }
+  }
+}

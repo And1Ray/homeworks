@@ -2,7 +2,8 @@
 <html lang="en">
 {% include 'parts/meta.twig' %}
 {% block style %}
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/vendor/owl.carousel.min.css">
+  <link rel="stylesheet" href="styles/vendor/owl.theme.default.min.css">
 {% endblock %}
 
 <style>
@@ -23,9 +24,12 @@
 
 {% include '../blocks/popup/popup.twig' %}
 
+{% include '../blocks/portfolio/portfolio.twig' %}
+
 <div class="button-up js-btn-up"><span>Наверх</span></div>
 
 <script src="scripts/vendor/jquery-3.4.1.min.js"></script>
+<script src="scripts/vendor/owl.carousel.min.js"></script>
 <script src="scripts/bundle.js"></script>
 
 </body>
