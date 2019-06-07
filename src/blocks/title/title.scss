@@ -1,0 +1,20 @@
+.b-title {
+  color: #333333;
+  font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 790px;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 63px;
+  z-index: 1;
+  @include w-to(567px) {
+    font-size: 18px;
+    padding-bottom: 23px;
+    p {
+      line-height: 21px;
+      margin-top: 12px;
+    }
+  }
+}
