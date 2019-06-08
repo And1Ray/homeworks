@@ -39,3 +39,55 @@
   animation:  js-in $transition-normal ease-in;
   visibility: visible;
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes showLeft {
+  from {
+    left: -70px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes hideLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: -70px;
+  }
+}
+
+@keyframes showElem {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.js-rise {
+  animation: fade-in .7s ease-in;
+  animation-fill-mode: forwards;
+}
+
+.show-btn {
+  animation: showLeft 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.hide-btn {
+  animation: hideLeft 1s ease-in-out;
+  animation-fill-mode: forwards;
+}

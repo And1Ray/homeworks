@@ -116,10 +116,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var $openBtnPopup = $('.js-open-popup');
     var $closeBtnPopup = $('.js-close-popup');
 
-    $openBtnPopup.click(function () {
-      $popup.addClass('popup_active');
+    var int = void 0;
 
-      setTimeout(function () {
+    $openBtnPopup.click(function () {
+      clearInterval(int);
+      $popup.addClass('popup_active');
+      int = setTimeout(function () {
         $popup.removeClass('popup_active');
       }, 5000);
     });
@@ -134,6 +136,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       $('html, body').animate({ scrollTop: 0 }, 500);
     });
 
+    //slider
     $(".js-slider").owlCarousel({
       items: 3,
       margin: 30,
@@ -171,6 +174,29 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     });
     $(".prev").click(function () {
       $(".js-slider").trigger("prev.owl.carousel");
+    });
+
+    //animation
+
+    var $pointStart = $('.price').offset().top;
+    var $items = $('.price__item');
+    var $up = $('.button-up');
+    var $pointBtn = $('.offer').offset().top;
+
+    $(window).scroll(function () {
+      if ($(document).scrollTop() >= $pointStart) {
+        $items.each(function (i, item) {
+          $(item).addClass('js-rise');
+        });
+      }
+
+      if ($(document).scrollTop() >= $pointBtn) {
+        $up.removeClass('hide-btn');
+        $up.addClass('show-btn');
+      } else if ($(document).scrollTop() === 0) {
+        $up.removeClass('show-btn');
+        $up.addClass('hide-btn');
+      }
     });
   });
 

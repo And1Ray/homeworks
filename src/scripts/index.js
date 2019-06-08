@@ -3,10 +3,12 @@ $(document).ready(() => {
   const $openBtnPopup = $('.js-open-popup');
   const $closeBtnPopup = $('.js-close-popup');
 
-  $openBtnPopup.click(() => {
-    $popup.addClass('popup_active');
+  let int;
 
-    setTimeout(() => {
+  $openBtnPopup.click(() => {
+    clearInterval(int);
+    $popup.addClass('popup_active');
+    int = setTimeout(() => {
       $popup.removeClass('popup_active');
     }, 5000);
   });
@@ -21,6 +23,7 @@ $(document).ready(() => {
     $('html, body').animate({scrollTop: 0}, 500);
   });
 
+  //slider
   $(".js-slider").owlCarousel({
     items: 3,
     margin: 30,
@@ -37,8 +40,8 @@ $(document).ready(() => {
         $('.owl-nav').removeClass('disabled');
       }
     },
-    responsive:{
-      768:{
+    responsive: {
+      768: {
         items: 3,
         dots: false,
         autoHeight: false,
@@ -53,10 +56,34 @@ $(document).ready(() => {
     }
   });
 
-  $(".next").click(function(){
+  $(".next").click(function () {
     $(".js-slider").trigger("next.owl.carousel");
   });
-  $(".prev").click(function(){
+  $(".prev").click(function () {
     $(".js-slider").trigger("prev.owl.carousel");
   });
+
+  //animation
+
+  const $pointStart = $('.price').offset().top;
+  const $items = $('.price__item');
+  const $up = $('.button-up');
+  const $pointBtn = $('.offer').offset().top;
+
+  $(window).scroll(() => {
+    if ($(document).scrollTop() >= $pointStart) {
+      $items.each((i, item) => {
+        $(item).addClass('js-rise');
+      });
+    }
+
+    if ($(document).scrollTop() >= $pointBtn) {
+      $up.removeClass('hide-btn');
+      $up.addClass('show-btn');
+    } else if ($(document).scrollTop() === 0) {
+      $up.removeClass('show-btn');
+      $up.addClass('hide-btn');
+    }
+  });
+
 });

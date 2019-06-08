@@ -6,6 +6,7 @@
   background-color: #ffd200;
   font-family: "Museo Sans Cyrl -700", sans-serif;
   font-size: 13px;
+  transition: $transition-default;
   @include w-to(567px) {
     max-width: 137px;
     height: 39px;

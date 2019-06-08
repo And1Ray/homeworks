@@ -1,6 +1,6 @@
 .button-up {
   position: fixed;
-  left: 0;
+  left: -70px;
   bottom: 0;
   padding: 5px;
   margin: 5px;
@@ -8,6 +8,7 @@
   background-color: #ffd200;
   font-family: "Museo Sans Cyrl -700", sans-serif;
   font-size: 13px;
+  z-index: 5;
   &:hover {
     background-color: lighten(#ffd200, 10%);
     cursor: pointer;

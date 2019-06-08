@@ -9,9 +9,13 @@
   display: none;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: 1s;
 
   &_active {
     display: flex;
+    animation: showElem 1s ease;
+    animation-fill-mode: forwards;
   }
 
   &-dialog {
@@ -22,6 +26,7 @@
     background-color: white;
     padding: 40px;
     position: relative;
+    transition: 1s;
 
     &__close {
       position: absolute;
