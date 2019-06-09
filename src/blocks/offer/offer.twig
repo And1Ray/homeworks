@@ -1,7 +1,7 @@
 <section class="offer">
   <div class="container offer__container">
 
-    <div class="offer__block">
+    <form class="offer__block">
       <h2 class="offer__title">Мы&nbsp;бесплатно разработаем
         дизайн-проект Вашего жилья
         и&nbsp;реализуем его!
@@ -12,11 +12,14 @@
       бесплатного дизайн-проекта!
     </span>
 
-      {% include '../inputs/inputs.twig' %}
+      {% include '../inputs/inputs.twig' with {
+        class: 'offer__inputs'
+      }%}
 
       {% include '../button/button.twig' with {
         class: 'offer__button',
-        text: 'Получить бесплатный дизайн-проект'
+        text: 'Получить бесплатный дизайн-проект',
+        type: 'submit'
       }%}
 
       <div class="offer__feedback">
@@ -26,7 +29,7 @@
           <span class="mod-phone">+7 (495) 42-251-31</span>
         </div>
       </div>
-    </div>
+    </form>
   </div>
   <img src="assets/img/practic/offer-bg.jpg" alt="" class="offer__bg">
 </section>

@@ -112,6 +112,37 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /***/function (module, exports) {
 
   $(document).ready(function () {
+    //Validation form
+    Vue.use(window.vuelidate.default);
+    Vue.use(VueMask.VueMaskPlugin);
+
+    var required = validators.required;
+    var email = validators.email;
+
+    new Vue({
+      el: '#app',
+      delimiters: ['${', '}'],
+      data: {
+        email: '',
+        name: '',
+        phone: '',
+        mask: '+#(###)###-##-##'
+      },
+      methods: {},
+      validations: {
+        email: {
+          email: email,
+          required: required
+        },
+        name: {
+          required: required
+        },
+        phone: {
+          required: required
+        }
+      }
+    });
+
     var $popup = $('.js-popup');
     var $openBtnPopup = $('.js-open-popup');
     var $closeBtnPopup = $('.js-close-popup');
@@ -178,7 +209,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
     //animation
 
-    var $pointStart = $('.price').offset().top;
+    var $pointStart = $('.slider').offset().top;
     var $items = $('.price__item');
     var $up = $('.button-up');
     var $pointBtn = $('.offer').offset().top;

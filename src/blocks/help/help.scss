@@ -1,0 +1,42 @@
+.help {
+  width:           100%;
+  display:         flex;
+  justify-content: center;
+  padding: 100px 0;
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    position: relative;
+
+    p {
+      position: absolute;
+      top: 5px;
+      left: 26px;
+
+      font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 23px;
+    }
+  }
+
+  &__item:first-child {
+    p {
+      max-width: 260px;
+    }
+  }
+  &__item:nth-child(2) {
+    p {
+      max-width: 288px;
+    }
+  }
+  &__item:last-child {
+    p {
+      max-width: 280px;
+    }
+  }
+}

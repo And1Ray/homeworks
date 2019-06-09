@@ -1,46 +1,46 @@
 .inputs {
-  margin-top: 30px;
-  margin-bottom: 28px;
-  @include w-to(991px) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  @include w-to(567px) {
-    margin-top: 25px;
-    margin-bottom: 7px;
+  &__wrap {
+    width: 100%;
+    position: relative;
   }
 
   input {
-    max-width: 214px;
     width: 100%;
+    padding-left: 23px;
     height: 65px;
     border-radius: 10px;
     border: 1px solid #dddddd;
+    background-color: #ffffff;
     transition: $transition-default;
 
     color: #999999;
-    font-family: "Museo Sans Cyrl -300", sans-serif;
-    font-weight: 400;
+    font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
     font-size: 15px;
     line-height: 24px;
-    padding-left: 25px;
+
     &:focus {
-      border: 1px solid orange;
-    }
-    &:first-child {
-      margin-right: 9px;
-      @include w-to(1200px) {
-        margin-bottom: 8px;
-        margin-right: 0;
-      }
-    }
-    @include w-to(1200px) {
-      width: 365px;
-      max-width: initial;
-    }
-    @include w-to(567px) {
-      width: 248px;
+      border: 1px solid #ffd200;
     }
   }
+}
+
+
+
+.inputs .invalid {
+  border: 1px solid red;
+  color: red;
+}
+.inputs .invalid-text {
+  font-family: Museo Sans Cyrl\ -300,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+
+.feedback__inputs .invalid-text {
+  font-family: Museo Sans Cyrl\ -300,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  bottom: 0;
 }

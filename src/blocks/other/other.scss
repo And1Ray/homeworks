@@ -14,3 +14,50 @@
     cursor: pointer;
   }
 }
+
+.block-text {
+  font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 50px;
+  padding-top: 55px;
+  padding-bottom: 61px;
+  background-color: #ffc000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  p {
+    text-align: center;
+    max-width: 930px;
+  }
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+
+  @include w-to(1200px) {
+    width: 96%;
+    max-width: 950px;
+  }
+  @include w-to(992px) {
+    width: 96%;
+    max-width: 742px;
+  }
+  @include w-to(768px) {
+    width: 96%;
+    max-width: 520px;
+  }
+  @include w-to(567px) {
+    width: 96%;
+    max-width: 275px;
+  }
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

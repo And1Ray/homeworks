@@ -1,0 +1,60 @@
+<section class="feedback">
+  <div class="feedback__questions">
+    <div class="questions">
+      <p class="questions__title">
+        Мы можем озвучить Вам примерную стоимость работы и материалов по телефону
+      </p>
+      <p class="questions__subtitle">
+        Для этого нужно ответить на 4 вопроса:
+      </p>
+
+      <ul class="questions__list">
+        <li class="questions__item">
+          <div class="questions__num"><span>1.</span></div>
+          <div class="questions__text"><span>Какова площадь помещения?</span></div>
+        </li>
+        <li class="questions__item">
+          <div class="questions__num"><span>2.</span></div>
+          <div class="questions__text"><span>У Вас новостройка или вторичное жилье?</span></div>
+        </li>
+        <li class="questions__item">
+          <div class="questions__num"><span>3.</span></div>
+          <div class="questions__text"><span>Где находится помещение, в котором будет
+производиться ремонт?</span></div>
+        </li>
+        <li class="questions__item">
+          <div class="questions__num"><span>4.</span></div>
+          <div class="questions__text"><span>Назначение помещения?</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="feedback__form">
+
+    <form class="feedback__form_block">
+      <h2 class="feedback__title">Оставьте заявку на бесплатный расчет ремонта по телефону
+      </h2>
+
+      <p class="feedback__subtitle">
+        Для этого заполните форму ниже
+      </p>
+
+      {% include '../inputs/inputs.twig' with {
+        class: 'feedback__inputs',
+        content: ''
+      } %}
+
+      {% include '../button/button.twig' with {
+        class: 'feedback__button',
+        text: 'Рассчитать стоимость',
+        type: 'submit'
+      } %}
+
+      <p class="feedback__moment">
+        Мы перезвоним Вам в течение 60 секунд
+      </p>
+    </form>
+  </div>
+</section>

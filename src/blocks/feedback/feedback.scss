@@ -1,0 +1,138 @@
+.feedback {
+  width: 100%;
+  display: flex;
+  padding-top: 109px;
+  flex-wrap: wrap;
+
+  &__questions {
+    width: 50.15%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #ffc000;
+    padding-top: 76px;
+    padding-bottom: 74px;
+  }
+
+  &__form {
+    width: 49.7%;
+    background-image: url('../assets/img/practic/form-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 96px;
+
+    display: flex;
+    justify-content: center;
+
+    &_block {
+      margin-left: -150px;
+      max-width: 370px;
+    }
+
+    .feedback__inputs {
+      margin-bottom: 29px;
+      input {
+        max-width: 93%;
+        width: 93%;
+        background: white;
+
+        &:first-child {
+          margin-bottom: 14px;
+        }
+      }
+    }
+
+    .feedback__button {
+      width: 100%;
+      max-width: 100%;
+      min-height: 70px;
+
+      color: #333333;
+      font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 18px;
+
+      margin-bottom: 12px;
+    }
+  }
+
+  &__title {
+    color: #333333;
+    font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: #333333;
+    font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    margin-top: 36px;
+    margin-bottom: 39px;
+  }
+
+  &__moment {
+    color: #333333;
+    font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+.questions {
+  max-width: 585px;
+  width: 100%;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 26px;
+    padding-left: 1px;
+
+    &:nth-child(3) {
+      .questions__text {
+        padding-top: 5px;
+      }
+
+      margin-bottom: 34px;
+    }
+  }
+
+  &__title {
+    font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    line-height: 33px;
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 45px;
+    margin-bottom: 81px;
+  }
+
+  &__list {
+    font-family: "Museo Sans Cyrl -500", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    max-width: 446px;
+  }
+
+  &__num {
+    min-width: 31px;
+    height: 31px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 33px;
+  }
+}

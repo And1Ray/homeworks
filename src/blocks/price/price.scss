@@ -3,6 +3,8 @@
   display:         flex;
   justify-content: center;
 
+  margin-bottom: 99px;
+
   &__block {
     max-width:       1170px;
     width:           100%;
@@ -134,16 +136,5 @@
       }
     }
 
-  }
-}
-
-.subtitle {
-  font-family:   "Museo Sans Cyrl -100", Helvetica, Arial, sans-serif;
-  font-size:     20px;
-  line-height:   45px;
-  margin-bottom: 48px;
-  @include w-to(567px) {
-    font-size:   14px;
-    line-height: 45px;
   }
 }

@@ -8,30 +8,54 @@
 
 <style>
   body {
-    display: flex;
+    display:        flex;
     flex-direction: column;
-    align-items: center;
+    align-items:    center;
   }
 </style>
 
 <body>
 
-{% include '../blocks/header/header.twig' %}
+<div class="body" id="app">
+  {% include '../blocks/header/header.twig' %}
 
-{% include '../blocks/hero/hero.twig' %}
+  {% include '../blocks/hero/hero.twig' %}
 
-{% include '../blocks/offer/offer.twig' %}
+  {% include '../blocks/offer/offer.twig' %}
 
-{% include '../blocks/popup/popup.twig' %}
+  {% include '../blocks/popup/popup.twig' %}
 
-{% include '../blocks/portfolio/portfolio.twig' %}
+  {% include '../blocks/portfolio/portfolio.twig' %}
 
-{% include '../blocks/price/price.twig' %}
+  {% include '../blocks/price/price.twig' %}
+
+  {% include '../blocks/stages/stages.twig' %}
+
+  <section class="block-text">
+    <p>Ремонт обойдется Вам дешевле, так как <br>
+      мы используем качественные материалы по оптовым ценам
+    </p>
+  </section>
+
+  {% include '../blocks/help/help.twig' %}
+
+  {% include '../blocks/guarantee/guarantee.twig' %}
+
+  {% include '../blocks/feedback/feedback.twig' %}
+
+  {% include '../blocks/footer/footer.twig' %}
+
+</div>
+
 
 <div class="button-up js-btn-up"><span>Наверх</span></div>
 
 <script src="scripts/vendor/jquery-3.4.1.min.js"></script>
 <script src="scripts/vendor/owl.carousel.min.js"></script>
+<script src="scripts/vendor/vue.js"></script>
+<script src="scripts/vendor/vuelidate.min.js"></script>
+<script src="scripts/vendor/validators.min.js"></script>
+<script src="scripts/vendor/v-mask.min.js"></script>
 <script src="scripts/bundle.js"></script>
 
 </body>

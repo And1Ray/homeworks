@@ -18,3 +18,14 @@
     }
   }
 }
+
+.subtitle {
+  font-family:   "Museo Sans Cyrl -100", Helvetica, Arial, sans-serif;
+  font-size:     20px;
+  line-height:   45px;
+  margin-bottom: 48px;
+  @include w-to(567px) {
+    font-size:   14px;
+    line-height: 45px;
+  }
+}

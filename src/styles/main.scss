@@ -9,25 +9,3 @@
 @import 'parts/services';
 //
 @import '../blocks/**/*.scss';
-
-.container {
-  max-width: 1170px;
-  width: 100%;
-
-  @include w-to(1200px) {
-    width: 96%;
-    max-width: 950px;
-  }
-  @include w-to(992px) {
-    width: 96%;
-    max-width: 742px;
-  }
-  @include w-to(768px) {
-    width: 96%;
-    max-width: 520px;
-  }
-  @include w-to(567px) {
-    width: 96%;
-    max-width: 275px;
-  }
-}

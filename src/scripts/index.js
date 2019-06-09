@@ -1,4 +1,37 @@
 $(document).ready(() => {
+  //Validation form
+    Vue.use(window.vuelidate.default);
+    Vue.use(VueMask.VueMaskPlugin);
+
+  const required = validators.required;
+  const email = validators.email;
+
+  new Vue({
+    el: '#app',
+    delimiters: ['${', '}'],
+    data: {
+      email: '',
+      name: '',
+      phone: '',
+      mask: '+#(###)###-##-##'
+    },
+    methods: {
+
+    },
+    validations: {
+      email: {
+        email,
+        required
+      },
+      name: {
+        required
+      },
+      phone: {
+        required
+      }
+    }
+  });
+
   const $popup = $('.js-popup');
   const $openBtnPopup = $('.js-open-popup');
   const $closeBtnPopup = $('.js-close-popup');
@@ -65,7 +98,7 @@ $(document).ready(() => {
 
   //animation
 
-  const $pointStart = $('.price').offset().top;
+  const $pointStart = $('.slider').offset().top;
   const $items = $('.price__item');
   const $up = $('.button-up');
   const $pointBtn = $('.offer').offset().top;
@@ -85,5 +118,4 @@ $(document).ready(() => {
       $up.addClass('hide-btn');
     }
   });
-
 });

@@ -1,4 +1,40 @@
-<div class="inputs">
-  <input type="text" placeholder="Ваше имя">
-  <input type="text" placeholder="Ваш телефон">
+<div class="inputs {{ class }}">
+  <div class="inputs__wrap">
+    <input
+      type="text"
+      name="name"
+      placeholder="Ваше имя"
+      v-model="name"
+      @blur="$v.name.$touch()"
+      :class="{'invalid': $v.name.$error}"
+    >
+    <div class="invalid-text" v-if="!$v.name.required && $v.name.$error"><span>Обязательное поле</span></div>
+  </div>
+  <div class="inputs__wrap">
+    <input
+      type="text"
+      name="phone"
+      placeholder="Ваш телефон"
+      v-mask="mask"
+      v-model="phone"
+      @blur="$v.phone.$touch()"
+      :class="{'invalid': $v.phone.$error}"
+    >
+    <div class="invalid-text" v-if="!$v.phone.required && $v.phone.$error"><span>Обязательное поле</span></div>
+  </div>
+  {% if class == 'feedback__inputs' %}
+    <div class="inputs__wrap">
+      <input
+        type="email"
+        class="inputs__email"
+        name="email"
+        placeholder="Ваш email"
+        v-model="email"
+        @blur="$v.email.$touch()"
+        :class="{'invalid': $v.email.$error}"
+      >
+      <div class="invalid-text" v-if="!$v.email.required && $v.email.$error"><span>Обязательное поле</span></div>
+      <div class="invalid-text" v-if="!$v.email.email && $v.email.$error"><span>Введите email</span></div>
+    </div>
+  {% endif %}
 </div>
