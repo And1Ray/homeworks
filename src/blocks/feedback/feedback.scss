@@ -1,7 +1,7 @@
 .feedback {
   width:       100%;
   display:     flex;
-  padding-top: 109px;
+  padding-top: 110px;
   flex-wrap:   wrap;
 
   @include w-to(768px) {
@@ -141,6 +141,10 @@
       line-height: 24px;
       max-width: 150px;
       margin: 14px auto;
+    }
+
+    @include w-from(991px) {
+      margin-bottom: 90px;
     }
   }
 }

@@ -82,6 +82,10 @@
     text-align: center;
     margin-top: 34px;
 
+    @include w-from(1200px) {
+      width: 107%;
+    }
+
     @include w-to(768px) {
       margin-top: 20px;
       line-height: 20px;
