@@ -1,1 +1,4 @@
-<button type="{{ type }}" class="button {{ class }}">{{ text }}</button>
+<div class="button-wrap">
+  <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
+  <button {{ attr }} type="{{ type }}" class="button {{ class }}">{{ text }}</button>
+</div>

@@ -118,6 +118,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
     var required = validators.required;
     var email = validators.email;
+    var minLength = validators.minLength;
+    var maxLength = validators.maxLength;
 
     new Vue({
       el: '#app',
@@ -126,16 +128,47 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         email: '',
         name: '',
         phone: '',
-        mask: '+#(###)###-##-##'
+        mask: '+7(###)###-##-##',
+        check: false
       },
-      methods: {},
+      methods: {
+        submitFormOffer: function submitFormOffer() {
+          this.check = true;
+          if (!this.$v.name.$error && !this.$v.name.$invalid && !this.$v.phone.$error && !this.$v.phone.$invalid) {
+            var info = {
+              name: this.name,
+              phone: this.phone
+            };
+            this.check = false;
+            console.log('\u0414\u0430\u043D\u043D\u044B\u0435 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B', info);
+          } else {
+            this.check = true;
+          }
+        },
+        submitFormFeedback: function submitFormFeedback() {
+          this.check = true;
+          if (!this.$v.$invalid && !this.$v.$error) {
+            var info = {
+              email: this.email,
+              name: this.name,
+              phone: this.phone
+            };
+            this.check = false;
+            console.log('\u0414\u0430\u043D\u043D\u044B\u0435 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B', info);
+          } else {
+            this.check = true;
+          }
+        }
+      },
       validations: {
         email: {
           email: email,
           required: required
         },
         name: {
-          required: required
+          required: required,
+          minLength: minLength(2),
+          maxLength: maxLength(15)
         },
         phone: {
           required: required

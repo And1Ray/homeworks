@@ -30,7 +30,7 @@
   border: 1px solid red;
   color: red;
 }
-.inputs .invalid-text {
+.invalid-text {
   font-family: Museo Sans Cyrl\ -300,Helvetica,Arial,sans-serif;
   font-size: 12px;
   color: red;
@@ -38,9 +38,13 @@
   bottom: -20px;
   left: 0;
 }
+.inputs .invalid-text {
+  @extend .invalid-text;
+}
 
 .feedback__inputs .invalid-text {
   font-family: Museo Sans Cyrl\ -300,Helvetica,Arial,sans-serif;
   font-size: 12px;
   bottom: 0;
 }
+

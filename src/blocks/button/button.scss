@@ -18,3 +18,11 @@
     cursor: pointer;
   }
 }
+
+.button-wrap {
+  position: relative;
+
+  .invalid-text {
+    bottom: -5px;
+  }
+}

@@ -5,6 +5,8 @@ $(document).ready(() => {
 
   const required = validators.required;
   const email = validators.email;
+  const minLength = validators.minLength;
+  const maxLength = validators.maxLength;
 
   new Vue({
     el: '#app',
@@ -13,10 +15,37 @@ $(document).ready(() => {
       email: '',
       name: '',
       phone: '',
-      mask: '+#(###)###-##-##'
+      mask: '+7(###)###-##-##',
+      check: false
     },
     methods: {
-
+      submitFormOffer() {
+        this.check = true;
+        if (!this.$v.name.$error && !this.$v.name.$invalid && !this.$v.phone.$error && !this.$v.phone.$invalid) {
+          const info = {
+            name: this.name,
+            phone: this.phone
+          };
+          this.check = false;
+          console.log(`Данные отправлены`, info);
+        } else {
+          this.check = true;
+        }
+      },
+      submitFormFeedback() {
+        this.check = true;
+        if (!this.$v.$invalid && !this.$v.$error) {
+          const info = {
+            email: this.email,
+            name: this.name,
+            phone: this.phone
+          };
+          this.check = false;
+          console.log(`Данные отправлены`, info);
+        } else {
+          this.check = true;
+        }
+      }
     },
     validations: {
       email: {
@@ -24,7 +53,9 @@ $(document).ready(() => {
         required
       },
       name: {
-        required
+        required,
+        minLength: minLength(2),
+        maxLength: maxLength(15)
       },
       phone: {
         required

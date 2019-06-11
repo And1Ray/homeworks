@@ -9,6 +9,8 @@
       :class="{'invalid': $v.name.$error}"
     >
     <div class="invalid-text" v-if="!$v.name.required && $v.name.$error"><span>Обязательное поле</span></div>
+    <div class="invalid-text" v-if="!$v.name.minLength && $v.name.$error"><span>Минимум 2 символа</span></div>
+    <div class="invalid-text" v-if="!$v.name.maxLength && $v.name.$error"><span>Максимум 15 символов</span></div>
   </div>
   <div class="inputs__wrap">
     <input

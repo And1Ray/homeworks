@@ -49,7 +49,8 @@
       {% include '../button/button.twig' with {
         class: 'feedback__button',
         text: 'Рассчитать стоимость',
-        type: 'submit'
+        type: 'submit',
+        attr: '@click.prevent="submitFormFeedback()"'
       } %}
 
       <p class="feedback__moment">

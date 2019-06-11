@@ -19,7 +19,8 @@
       {% include '../button/button.twig' with {
         class: 'offer__button',
         text: 'Получить бесплатный дизайн-проект',
-        type: 'submit'
+        type: 'submit',
+        attr: '@click.prevent="submitFormOffer()"'
       }%}
 
       <div class="offer__feedback">

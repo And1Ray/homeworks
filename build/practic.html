@@ -54,7 +54,10 @@
           <span class="header__number">+7 (495) 42-251-31</span>
         </div>
 
-        <button type="button" class="button header__button js-open-popup">Перезвоните мне</button>
+        <div class="button-wrap">
+          <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
+          <button type="button" class="button header__button js-open-popup">Перезвоните мне</button>
+        </div>
       </div>
     </header>
 
@@ -116,6 +119,8 @@
             <div class="inputs__wrap">
               <input type="text" name="name" placeholder="Ваше имя" v-model="name" @blur="$v.name.$touch()" :class="{'invalid': $v.name.$error}">
               <div class="invalid-text" v-if="!$v.name.required && $v.name.$error"><span>Обязательное поле</span></div>
+              <div class="invalid-text" v-if="!$v.name.minLength && $v.name.$error"><span>Минимум 2 символа</span></div>
+              <div class="invalid-text" v-if="!$v.name.maxLength && $v.name.$error"><span>Максимум 15 символов</span></div>
             </div>
             <div class="inputs__wrap">
               <input type="text" name="phone" placeholder="Ваш телефон" v-mask="mask" v-model="phone" @blur="$v.phone.$touch()" :class="{'invalid': $v.phone.$error}">
@@ -124,7 +129,10 @@
 
           </div>
 
-          <button type="submit" class="button offer__button">Получить бесплатный дизайн-проект</button>
+          <div class="button-wrap">
+            <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
+            <button @click.prevent="submitFormOffer()" type="submit" class="button offer__button">Получить бесплатный дизайн-проект</button>
+          </div>
 
           <div class="offer__feedback">
             <span>Наш менеджер перезвонит Вам в&nbsp;течение 60&nbsp;секунд</span>
@@ -423,6 +431,8 @@
             <div class="inputs__wrap">
               <input type="text" name="name" placeholder="Ваше имя" v-model="name" @blur="$v.name.$touch()" :class="{'invalid': $v.name.$error}">
               <div class="invalid-text" v-if="!$v.name.required && $v.name.$error"><span>Обязательное поле</span></div>
+              <div class="invalid-text" v-if="!$v.name.minLength && $v.name.$error"><span>Минимум 2 символа</span></div>
+              <div class="invalid-text" v-if="!$v.name.maxLength && $v.name.$error"><span>Максимум 15 символов</span></div>
             </div>
             <div class="inputs__wrap">
               <input type="text" name="phone" placeholder="Ваш телефон" v-mask="mask" v-model="phone" @blur="$v.phone.$touch()" :class="{'invalid': $v.phone.$error}">
@@ -437,7 +447,10 @@
 
           </div>
 
-          <button type="submit" class="button feedback__button">Рассчитать стоимость</button>
+          <div class="button-wrap">
+            <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
+            <button @click.prevent="submitFormFeedback()" type="submit" class="button feedback__button">Рассчитать стоимость</button>
+          </div>
 
           <p class="feedback__moment">
             Мы перезвоним Вам в течение 60 секунд
