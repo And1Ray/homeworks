@@ -1,7 +1,7 @@
 $(document).ready(() => {
   //Validation form
-    Vue.use(window.vuelidate.default);
-    Vue.use(VueMask.VueMaskPlugin);
+  Vue.use(window.vuelidate.default);
+  Vue.use(VueMask.VueMaskPlugin);
 
   const required = validators.required;
   const email = validators.email;
@@ -62,6 +62,23 @@ $(document).ready(() => {
       }
     }
   });
+
+  ymaps.ready(init);
+
+  function init() {
+    // Создание карты.
+    var myMap = new ymaps.Map("map", {
+      center: [55.43287307, 37.26863050],
+      zoom: 17
+    });
+
+    myMap.geoObjects.add(new ymaps.Placemark([55.43287307, 37.26863050], {
+      balloonContent: '<strong>Мы здесь</strong>'
+    }, {
+      preset: 'islands#circleIcon',
+      iconColor: '#3caa3c'
+    }));
+  }
 
   const $popup = $('.js-popup');
   const $openBtnPopup = $('.js-open-popup');

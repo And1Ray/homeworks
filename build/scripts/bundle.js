@@ -176,6 +176,23 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
     });
 
+    ymaps.ready(init);
+
+    function init() {
+      // Создание карты.
+      var myMap = new ymaps.Map("map", {
+        center: [55.43287307, 37.26863050],
+        zoom: 17
+      });
+
+      myMap.geoObjects.add(new ymaps.Placemark([55.43287307, 37.26863050], {
+        balloonContent: '<strong>Мы здесь</strong>'
+      }, {
+        preset: 'islands#circleIcon',
+        iconColor: '#3caa3c'
+      }));
+    }
+
     var $popup = $('.js-popup');
     var $openBtnPopup = $('.js-open-popup');
     var $closeBtnPopup = $('.js-close-popup');
