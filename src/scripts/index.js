@@ -87,6 +87,9 @@ $(document).ready(() => {
   let int;
 
   $openBtnPopup.click(() => {
+
+    ym(51856894, 'reachGoal', 'button');
+
     clearInterval(int);
     $popup.addClass('popup_active');
     int = setTimeout(() => {
