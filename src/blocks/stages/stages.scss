@@ -2,49 +2,85 @@
   width:           100%;
   display:         flex;
   justify-content: center;
-  padding-bottom: 94px;
+  padding-bottom:  94px;
+
+  @include w-to(567px) {
+    padding-bottom: 44px;
+  }
 
   &__block {
-    display: flex;
+    display:        flex;
     flex-direction: column;
-    align-items: center;
+    align-items:    center;
 
     & > .stages__title {
-      max-width: 770px;
-      width: 100%;
+      max-width:      770px;
+      width:          100%;
       padding-bottom: 8px;
+
+      @include w-to(991px) {
+        p {
+          margin-bottom: 3px;
+        }
+      }
     }
 
     & > .subtitle {
       margin-bottom: 57px;
+
+      @include w-to(991px) {
+        margin-bottom: 18px;
+      }
     }
   }
 
   &__items {
-    width: 100%;
-    display: flex;
+    width:           100%;
+    display:         flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap:       wrap;
+
+    @include w-to(567px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
-    max-width: 148px;
-    width: 100%;
-    display: flex;
+    max-width:      148px;
+    width:          100%;
+    display:        flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    
+    align-items:    center;
+    position:       relative;
+
+    @include w-range(567px, 991px) {
+      margin: 10px 20px;
+    }
+
+    @include w-to(567px) {
+      margin-bottom: 33px;
+      max-width: 128px;
+    }
+
     &:after {
-      content: '';
-      position: absolute;
-      background-image: url(../assets/img/practic/stage-arrow.png);
-      background-repeat: no-repeat;
+      content:             '';
+      position:            absolute;
+      background-image:    url(../assets/img/practic/stage-arrow.png);
+      background-repeat:   no-repeat;
       background-position: center;
-      width: 72px;
-      height: 25px;
-      top: -13px;
-      right: -54%;
+      width:               72px;
+      height:              25px;
+      top:                 -13px;
+      right:               -54%;
+
+      @include w-range(991px, 1200px) {
+        right: -38%;
+      }
+
+      @include w-to(991px) {
+        display: none;
+      }
     }
 
     &:last-child {
@@ -55,22 +91,30 @@
   }
 
   &__img {
-    max-width: 94px;
-    width: 100%;
-    height: 94px;
-    border-radius: 50%;
-    border: 3px solid #ffd200;
-    display: flex;
-    align-items: center;
+    max-width:       94px;
+    width:           100%;
+    height:          94px;
+    border-radius:   50%;
+    border:          3px solid #ffd200;
+    display:         flex;
+    align-items:     center;
     justify-content: center;
-    margin-bottom: 27px;
+    margin-bottom:   27px;
+    @include w-to(567px) {
+      margin-bottom: 22px;
+    }
   }
 
   &__text {
     font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size:   14px;
     line-height: 20px;
-    text-align: center;
+    text-align:  center;
+
+    @include w-to(567px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 
 }

@@ -127,12 +127,35 @@
 
   &__inputs {
     padding: 30px 0 28px;
+    @include w-to(1200px) {
+      width: 100%;
+    }
+    @include w-to(991px) {
+      width: 79%;
+    }
+    @include w-to(567px) {
+      width: 100%;
+      padding: 25px 0 9px;
+    }
     .inputs__wrap {
       display: inline-block;
       max-width: 216px;
 
+      @include w-to(1200px) {
+        max-width: initial;
+        width: 93.5%;
+      }
+      @include w-to(567px) {
+        max-width: initial;
+        width: 90%;
+      }
+
       &:first-child {
         margin-right: 35px;
+        @include w-to(1200px) {
+          margin-right: 0;
+          margin-bottom: 6px;
+        }
       }
     }
   }

@@ -4,6 +4,10 @@
   padding-top: 109px;
   flex-wrap: wrap;
 
+  @include w-to(768px) {
+    padding-top: 37px;
+  }
+
   &__questions {
     width: 50.15%;
     display: flex;
@@ -12,6 +16,14 @@
     background-color: #ffc000;
     padding-top: 76px;
     padding-bottom: 74px;
+
+    @include w-to(768px) {
+      padding: 24px 21px 43px;
+    }
+
+    @include w-to(991px) {
+      width: 100%;
+    }
   }
 
   &__form {
@@ -20,6 +32,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 96px;
+
+    @include w-to(991px) {
+      width: 100%;
+    }
 
     display: flex;
     justify-content: center;
@@ -93,7 +109,23 @@
     margin-bottom: 26px;
     padding-left: 1px;
 
+    &:nth-child(1) {
+      @include w-to(768px) {
+        margin-bottom: 26px;
+      }
+    }
+    &:nth-child(2) {
+      @include w-to(768px) {
+        margin-bottom: 18px;
+      }
+    }
+
     &:nth-child(3) {
+
+      @include w-to(768px) {
+        margin-bottom: 20px;
+      }
+
       .questions__text {
         padding-top: 5px;
       }
@@ -107,6 +139,13 @@
     font-size: 22px;
     line-height: 33px;
     margin-bottom: 30px;
+
+    @include w-to(768px) {
+      font-size: 18px;
+      line-height: 22px;
+      max-width: 220px;
+      margin-bottom: 0;
+    }
   }
 
   &__subtitle {
@@ -114,6 +153,13 @@
     font-size: 16px;
     line-height: 45px;
     margin-bottom: 81px;
+
+    @include w-to(768px) {
+      font-size: 14px;
+      line-height: 16px;
+      max-width: 220px;
+      margin-bottom: 38px;
+    }
   }
 
   &__list {
@@ -121,6 +167,10 @@
     font-size: 18px;
     letter-spacing: -0.5px;
     max-width: 446px;
+
+    @include w-to(768px) {
+      font-size: 14px;
+    }
   }
 
   &__num {
@@ -134,5 +184,9 @@
     align-items: center;
 
     margin-right: 33px;
+
+    @include w-to(768px) {
+      margin-right: 8px;
+    }
   }
 }

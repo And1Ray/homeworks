@@ -4,14 +4,33 @@
   justify-content: center;
   padding: 100px 0;
 
+  @include w-to(768px) {
+    padding: 59px 0 35px;
+  }
+
   &__block {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @include w-range(991px, 1200px) {
+      justify-content: center;
+    }
   }
 
   &__item {
     position: relative;
+    @include w-range(991px, 1200px) {
+      margin: 5px;
+    }
+    @include w-to(991px) {
+      width: 100%;
+      margin-bottom: 24px;
+
+      img {
+        width: 100%;
+      }
+    }
 
     p {
       position: absolute;
@@ -21,6 +40,12 @@
       font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 23px;
+
+      @include w-to(768px) {
+        font-size: 12px;
+        line-height: 16.83px;
+        left: 19px;
+      }
     }
   }
 
@@ -32,11 +57,19 @@
   &__item:nth-child(2) {
     p {
       max-width: 288px;
+
+      @include w-to(768px) {
+        max-width: 234px;
+        left: 21px;
+      }
     }
   }
   &__item:last-child {
     p {
       max-width: 280px;
+      @include w-to(768px) {
+        left: 15px;
+      }
     }
   }
 }

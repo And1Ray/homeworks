@@ -4,6 +4,8 @@
   </p>
 </div>
 
-<div class="subtitle">
-  <span>{{ subtitle }}</span>
-</div>
+{% if subtitle != '' %}
+  <div class="subtitle">
+    <span>{{ subtitle }}</span>
+  </div>
+{% endif %}

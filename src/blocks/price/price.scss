@@ -5,6 +5,10 @@
 
   margin-bottom: 99px;
 
+  @include w-to(991px) {
+    margin-bottom: 12px;
+  }
+
   &__block {
     max-width:       1170px;
     width:           100%;

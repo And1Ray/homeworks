@@ -5,6 +5,10 @@
 
   &__map {
     width: 50.15%;
+
+    @include w-to(991px) {
+      width: 300px;
+    }
   }
   &__contacts {
     width: 49.7%;
@@ -12,6 +16,10 @@
     justify-content: center;
     align-items: center;
     padding: 91px 0 85px;
+
+    @include w-to(991px) {
+      width: 100%;
+    }
   }
 
   &__block {

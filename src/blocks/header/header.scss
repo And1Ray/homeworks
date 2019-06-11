@@ -43,6 +43,13 @@
     @include w-to(567px) {
       padding-top: 2px;
     }
+
+    .button-wrap {
+      width: 170px;
+      @include w-to(567px) {
+        width: 137px;
+      }
+    }
   }
 
   &__text {
