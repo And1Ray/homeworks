@@ -1,4 +1,13 @@
 <div class="button-wrap">
-  <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
-  <button onclick="ym(51856894, 'reachGoal', 'button'); return true;" {{ attr }} type="{{ type }}" class="button {{ class }}">{{ text }}</button>
+  {% if class == 'feedback__button' %}
+    <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
+  {% endif %}
+  {% if class == 'offer__button' %}
+    <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
+  {% endif %}
+  {% if class == 'header__button js-open-popup' %}
+    <button onclick="ym(51856894, 'reachGoal', 'button'); return true;" {{ attr }} type="{{ type }}" class="button {{ class }}">{{ text }}</button>
+    {% else %}
+      <button {{ attr }} type="{{ type }}" class="button {{ class }}">{{ text }}</button>
+  {% endif %}
 </div>
