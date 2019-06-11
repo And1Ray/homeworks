@@ -191,6 +191,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         preset: 'islands#circleIcon',
         iconColor: '#3caa3c'
       }));
+
+      myMap.behaviors.disable('scrollZoom');
     }
 
     var $popup = $('.js-popup');

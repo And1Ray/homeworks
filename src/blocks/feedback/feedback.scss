@@ -1,21 +1,21 @@
 .feedback {
-  width: 100%;
-  display: flex;
+  width:       100%;
+  display:     flex;
   padding-top: 109px;
-  flex-wrap: wrap;
+  flex-wrap:   wrap;
 
   @include w-to(768px) {
     padding-top: 37px;
   }
 
   &__questions {
-    width: 50.15%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    width:            50.15%;
+    display:          flex;
+    flex-direction:   column;
+    align-items:      flex-end;
     background-color: #ffc000;
-    padding-top: 76px;
-    padding-bottom: 74px;
+    padding-top:      76px;
+    padding-bottom:   74px;
 
     @include w-to(768px) {
       padding: 24px 21px 43px;
@@ -27,93 +27,140 @@
   }
 
   &__form {
-    width: 49.7%;
-    background-image: url('../assets/img/practic/form-bg.jpg');
+    width:             49.7%;
+    background-image:  url('../assets/img/practic/form-bg.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 96px;
+    background-size:   cover;
+    padding-top:       96px;
 
     @include w-to(991px) {
       width: 100%;
     }
 
-    display: flex;
-    justify-content: center;
+    @include w-to(768px) {
+      padding: 56px 21px 15px;
+    }
+
+    display:           flex;
+    justify-content:   center;
 
     &_block {
       margin-left: -150px;
-      max-width: 370px;
+      max-width:   370px;
+
+      @include w-to(1200px) {
+        margin-left: 0;
+      }
     }
 
     .feedback__inputs {
-      margin-bottom: 29px;
+      margin-bottom: 13px;
+      @include w-to(768px) {
+        margin-bottom: 2px;
+      }
+
+      .inputs__wrap {
+        @include w-to(320px + 1px ) {
+          width: 97%;
+        }
+      }
+
       input {
-        max-width: 93%;
-        width: 93%;
+        max-width:  93%;
+        width:      93%;
         background: white;
 
         &:first-child {
           margin-bottom: 14px;
+          @include w-to(768px) {
+            margin-bottom: 7px;
+          }
         }
+
       }
     }
 
     .feedback__button {
-      width: 100%;
-      max-width: 100%;
-      min-height: 70px;
+      width:         100%;
+      max-width:     100%;
+      min-height:    70px;
 
-      color: #333333;
-      font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 18px;
+      color:         #333333;
+      font-family:   "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
+      font-size:     16px;
+      line-height:   18px;
 
       margin-bottom: 12px;
+
+      @include w-to(768px) {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
   }
 
   &__title {
-    color: #333333;
+    color:       #333333;
     font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
-    font-size: 22px;
+    font-size:   22px;
     line-height: 33px;
-    text-align: center;
+    text-align:  center;
+
+    @include w-to(768px) {
+      font-size:   18px;
+      line-height: 25.35px;
+    }
   }
 
   &__subtitle {
-    color: #333333;
-    font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 35px;
-    text-align: center;
-    margin-top: 36px;
+    color:         #333333;
+    font-family:   "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
+    font-size:     16px;
+    line-height:   35px;
+    text-align:    center;
+    margin-top:    36px;
     margin-bottom: 39px;
+
+    @include w-to(768px) {
+      font-size:     14px;
+      line-height:   26.88px;
+      margin-top:    16px;
+      margin-bottom: 30px;
+    }
   }
 
   &__moment {
-    color: #333333;
+    color:       #333333;
     font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size:   15px;
     line-height: 24px;
-    text-align: center;
+    text-align:  center;
+
+    @include w-to(768px) {
+      font-size: 14px;
+      line-height: 24px;
+      max-width: 150px;
+      margin: 14px auto;
+    }
   }
 }
 
 .questions {
   max-width: 585px;
-  width: 100%;
+  width:     100%;
 
   &__item {
-    display: flex;
-    align-items: center;
+    display:       flex;
+    align-items:   center;
     margin-bottom: 26px;
-    padding-left: 1px;
+    padding-left:  1px;
 
     &:nth-child(1) {
       @include w-to(768px) {
         margin-bottom: 26px;
       }
     }
+
     &:nth-child(2) {
       @include w-to(768px) {
         margin-bottom: 18px;
@@ -135,38 +182,38 @@
   }
 
   &__title {
-    font-family: "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
-    font-size: 22px;
-    line-height: 33px;
+    font-family:   "Museo Sans Cyrl -700", Helvetica, Arial, sans-serif;
+    font-size:     22px;
+    line-height:   33px;
     margin-bottom: 30px;
 
     @include w-to(768px) {
-      font-size: 18px;
-      line-height: 22px;
-      max-width: 220px;
+      font-size:     18px;
+      line-height:   22px;
+      max-width:     220px;
       margin-bottom: 0;
     }
   }
 
   &__subtitle {
-    font-family: "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 45px;
+    font-family:   "Museo Sans Cyrl -300", Helvetica, Arial, sans-serif;
+    font-size:     16px;
+    line-height:   45px;
     margin-bottom: 81px;
 
     @include w-to(768px) {
-      font-size: 14px;
-      line-height: 16px;
-      max-width: 220px;
+      font-size:     14px;
+      line-height:   16px;
+      max-width:     220px;
       margin-bottom: 38px;
     }
   }
 
   &__list {
-    font-family: "Museo Sans Cyrl -500", Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-family:    "Museo Sans Cyrl -500", Helvetica, Arial, sans-serif;
+    font-size:      18px;
     letter-spacing: -0.5px;
-    max-width: 446px;
+    max-width:      446px;
 
     @include w-to(768px) {
       font-size: 14px;
@@ -174,16 +221,16 @@
   }
 
   &__num {
-    min-width: 31px;
-    height: 31px;
-    border: 2px solid #000000;
-    border-radius: 50%;
+    min-width:       31px;
+    height:          31px;
+    border:          2px solid #000000;
+    border-radius:   50%;
 
-    display: flex;
+    display:         flex;
     justify-content: center;
-    align-items: center;
+    align-items:     center;
 
-    margin-right: 33px;
+    margin-right:    33px;
 
     @include w-to(768px) {
       margin-right: 8px;

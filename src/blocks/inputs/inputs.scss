@@ -40,11 +40,21 @@
 }
 .inputs .invalid-text {
   @extend .invalid-text;
+
+  @include w-to(768px) {
+    bottom: 12px;
+    left: 23px;
+  }
 }
 
 .feedback__inputs .invalid-text {
   font-family: Museo Sans Cyrl\ -300,Helvetica,Arial,sans-serif;
   font-size: 12px;
   bottom: 0;
+
+  @include w-to(768px) {
+    bottom: 12px;
+    left: 23px;
+  }
 }
 

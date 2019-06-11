@@ -78,6 +78,8 @@ $(document).ready(() => {
       preset: 'islands#circleIcon',
       iconColor: '#3caa3c'
     }));
+
+    myMap.behaviors.disable('scrollZoom');
   }
 
   const $popup = $('.js-popup');

@@ -1,13 +1,18 @@
 .footer {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 
   &__map {
     width: 50.15%;
+    min-height: 640px;
+    height: 100%;
 
     @include w-to(991px) {
-      width: 300px;
+      min-width: 320px;
+      width: 100%;
+      min-height: 665px;
+      height: 100%;
     }
   }
   &__contacts {
@@ -20,11 +25,19 @@
     @include w-to(991px) {
       width: 100%;
     }
+
+    @include w-to(768px) {
+      padding: 65px 24px 22px;
+    }
   }
 
   &__block {
     max-width: 300px;
     margin-left: -223px;
+
+    @include w-to(1200px) {
+      margin-left: 0;
+    }
   }
 
   &__title {
@@ -32,12 +45,22 @@
     font-size: 22px;
     margin-bottom: 95px;
     line-height: 33px;
+
+    @include w-to(768px) {
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 38px;
+    }
   }
 
   &__icon {
     max-width: 20px;
     width: 100%;
     margin-right: 21px;
+
+    @include w-to(768px) {
+      margin-right: 9px;
+    }
   }
 
   &__text {
