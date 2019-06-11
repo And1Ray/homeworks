@@ -82,7 +82,7 @@
 
         <div class="button-wrap">
           <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
-          <button type="button" class="button header__button js-open-popup">Перезвоните мне</button>
+          <button onclick="ym(51856894, 'reachGoal', 'button'); return true;" type="button" class="button header__button js-open-popup">Перезвоните мне</button>
         </div>
       </div>
     </header>
@@ -157,7 +157,7 @@
 
           <div class="button-wrap">
             <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
-            <button @click.prevent="submitFormOffer()" type="submit" class="button offer__button">Получить бесплатный дизайн-проект</button>
+            <button onclick="ym(51856894, 'reachGoal', 'button'); return true;" @click.prevent="submitFormOffer()" type="submit" class="button offer__button">Получить бесплатный дизайн-проект</button>
           </div>
 
           <div class="offer__feedback">
@@ -474,7 +474,7 @@
 
           <div class="button-wrap">
             <div v-if="check" class="invalid-text"><span>Не заполнены поля</span></div>
-            <button @click.prevent="submitFormFeedback()" type="submit" class="button feedback__button">Рассчитать стоимость</button>
+            <button onclick="ym(51856894, 'reachGoal', 'button'); return true;" @click.prevent="submitFormFeedback()" type="submit" class="button feedback__button">Рассчитать стоимость</button>
           </div>
 
           <p class="feedback__moment">

@@ -200,9 +200,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
     var int = void 0;
 
     $openBtnPopup.click(function () {
-
-      ym(51856894, 'reachGoal', 'button');
-
       clearInterval(int);
       $popup.addClass('popup_active');
       int = setTimeout(function () {
