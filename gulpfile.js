@@ -1,27 +1,28 @@
 'use strict';
 
-const gulp        = require('gulp');
-const watch       = require('gulp-watch'); // Более умный вотчер
-const batch       = require('gulp-batch'); // Пачки задач
-const plumber     = require('gulp-plumber'); // Обработка ошибок
-const notify      = require('gulp-notify');
+const gulp = require('gulp');
+const watch = require('gulp-watch'); // Более умный вотчер
+const batch = require('gulp-batch'); // Пачки задач
+const plumber = require('gulp-plumber'); // Обработка ошибок
+const notify = require('gulp-notify');
 const browserSync = require('browser-sync').create();
-const minimist    = require('minimist'); // Работа с аргументами команд
+const minimist = require('minimist'); // Работа с аргументами команд
 //
-const twig         = require('gulp-twig');
-const beautify     = require('gulp-html-beautify');
+const twig = require('gulp-twig');
+const beautify = require('gulp-html-beautify');
+const htmlmin = require('gulp-htmlmin');
 //
-const sass         = require('gulp-sass');
-const sassGlob     = require('gulp-sass-glob');
-const postcss      = require('gulp-postcss');
+const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const cssnano      = require('cssnano');
+const cssnano = require('cssnano');
 //
-const webpack      = require('webpack-stream');
-const babel        = require('gulp-babel');
-const uglify       = require('gulp-uglify');
+const webpack = require('webpack-stream');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 //
-const imagemin     = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 
 // Обработка ошибок
 const handleError = err => {
@@ -30,7 +31,7 @@ const handleError = err => {
 
 // Обработка аргументов
 const knownOptions = {
-  string:  'env',
+  string: 'env',
   default: {env: process.env.NODE_ENV || 'production'}
 };
 
@@ -42,8 +43,8 @@ gulp.task('server', (done) => {
     server: {
       baseDir: 'build/'
     },
-    host:   'localhost',
-    port:   9000,
+    host: 'localhost',
+    port: 9000,
     notify: false
   });
   done();
@@ -59,17 +60,14 @@ gulp.task('server:inject', () => {
 // 2. Билды
 gulp.task('build:html', () => {
   gulp.src([
-      'src/pages/*.twig',
-      'src/pages/*.html'
-    ])
+    'src/pages/*.twig',
+    'src/pages/*.html'
+  ])
     .pipe(twig())
-    .pipe(beautify({indent_char: ' ', indent_size: 2, max_preserve_newlines: 10}))
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('build/'));
 });
 gulp.task('build:styles', () => {
-  gulp.src('src/styles/vendor/*.css')
-    .pipe(gulp.dest('build/styles/vendor/'));
-
   gulp.src('src/styles/*.scss')
     .pipe(plumber(handleError))
     .pipe(sassGlob())
@@ -88,12 +86,12 @@ gulp.task('build:scripts', () => {
   gulp.src('src/scripts/index.js')
     .pipe(plumber(handleError))
     .pipe(webpack({
-      output:       {filename: 'bundle.js'},
+      output: {filename: 'bundle.js'},
       optimization: {minimize: true},
-      mode:         'production'
+      mode: 'production'
     }))
     .pipe(babel({presets: ['env']}))
-    // .pipe(uglify({mangle: false}))
+    .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('build/scripts/'));
 });
 gulp.task('build:assets', () => {

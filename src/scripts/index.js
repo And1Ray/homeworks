@@ -1,4 +1,5 @@
-$(document).ready(() => {
+document.addEventListener('DOMContentLoaded', () => {
+
   //Validation form
   Vue.use(window.vuelidate.default);
   Vue.use(VueMask.VueMaskPlugin);
@@ -63,6 +64,7 @@ $(document).ready(() => {
     }
   });
 
+  //lazyLoad
   function lazy(el) {
     new LazyLoad({
       elements_selector: el,
@@ -76,8 +78,10 @@ $(document).ready(() => {
       }
     });
   }
+
   lazy('.js-lazy');
 
+  //popup
   const $popup = $('.js-popup');
   const $openBtnPopup = $('.js-open-popup');
   const $closeBtnPopup = $('.js-close-popup');
@@ -95,27 +99,28 @@ $(document).ready(() => {
     $popup.removeClass('popup_active');
   });
 
-  const $btnUp = $('.js-btn-up');
-
-  $btnUp.click(function () {
+  //btn Up
+  $('.js-btn-up').click(function () {
     $('html, body').animate({scrollTop: 0}, 500);
   });
 
   //slider
-  $(".js-slider").owlCarousel({
+  const $slider = $(".js-slider");
+  const $nav = $('.owl-nav');
+  $slider.owlCarousel({
     items: 3,
     margin: 30,
     nav: true,
     loop: true,
     autoHeight: false,
     onInitialized: function nonNav() {
-      if ($('.owl-nav').hasClass('disabled')) {
-        $('.owl-nav').removeClass('disabled');
+      if ($nav.hasClass('disabled')) {
+        $nav.removeClass('disabled');
       }
     },
     onChanged: function nonNav() {
-      if ($('.owl-nav').hasClass('disabled')) {
-        $('.owl-nav').removeClass('disabled');
+      if ($nav.hasClass('disabled')) {
+        $nav.removeClass('disabled');
       }
     },
     responsive: {
@@ -135,15 +140,36 @@ $(document).ready(() => {
   });
 
   $(".next").click(function () {
-    $(".js-slider").trigger("next.owl.carousel");
+    $slider.trigger("next.owl.carousel");
   });
   $(".prev").click(function () {
-    $(".js-slider").trigger("prev.owl.carousel");
+    $slider.trigger("prev.owl.carousel");
   });
 
   //animation
+  const $pointStart = $('.slider').offset().top;
+  const $items = $('.price__item');
+  const $up = $('.button-up');
+  const $pointBtn = $('.offer').offset().top;
 
+  $(window).scroll(() => {
+    if ($(document).scrollTop() >= $pointStart) {
+      $items.each((i, item) => {
+        $(item).addClass('js-rise');
+      });
+    }
+
+    if ($(document).scrollTop() >= $pointBtn) {
+      $up.removeClass('hide-btn').addClass('show-btn');;
+    } else if ($(document).scrollTop() === 0) {
+      $up.removeClass('show-btn').addClass('hide-btn');
+    }
+  });
+
+
+  //map
   let count = 0;
+  ymaps.ready(init());
 
   function init() {
     $('.footer__map').hover(function () {
@@ -167,29 +193,4 @@ $(document).ready(() => {
     });
   }
 
-  const $pointStart = $('.slider').offset().top;
-  const $items = $('.price__item');
-  const $up = $('.button-up');
-  const $pointBtn = $('.offer').offset().top;
-  const $mapInit = $('.feedback').offset().top;
-
-  $(window).scroll(() => {
-    if ($(document).scrollTop() >= $mapInit) {
-      ymaps.ready(init());
-    }
-
-    if ($(document).scrollTop() >= $pointStart) {
-      $items.each((i, item) => {
-        $(item).addClass('js-rise');
-      });
-    }
-
-    if ($(document).scrollTop() >= $pointBtn) {
-      $up.removeClass('hide-btn');
-      $up.addClass('show-btn');
-    } else if ($(document).scrollTop() === 0) {
-      $up.removeClass('show-btn');
-      $up.addClass('hide-btn');
-    }
-  });
 });
