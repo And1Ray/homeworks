@@ -63,6 +63,21 @@ $(document).ready(() => {
     }
   });
 
+  function lazy(el) {
+    new LazyLoad({
+      elements_selector: el,
+      threshold: $(window).height(),
+      callback_load() {
+        if ($(window).data('plugin_stellar')) {
+          $(window)
+            .data('plugin_stellar')
+            .refresh();
+        }
+      }
+    });
+  }
+  lazy('.js-lazy');
+
   const $popup = $('.js-popup');
   const $openBtnPopup = $('.js-open-popup');
   const $closeBtnPopup = $('.js-close-popup');
@@ -76,7 +91,6 @@ $(document).ready(() => {
       $popup.removeClass('popup_active');
     }, 5000);
   });
-
   $closeBtnPopup.click(() => {
     $popup.removeClass('popup_active');
   });
@@ -129,12 +143,41 @@ $(document).ready(() => {
 
   //animation
 
+  let count = 0;
+
+  function init() {
+    $('.footer__map').hover(function () {
+      if (count === 0) {
+        const myMap = new ymaps.Map("map", {
+          center: [55.43287307, 37.26863050],
+          zoom: 17
+        });
+
+        myMap.geoObjects.add(new ymaps.Placemark([55.43287307, 37.26863050], {
+          balloonContent: '<strong>Мы здесь</strong>'
+        }, {
+          preset: 'islands#circleIcon',
+          iconColor: '#3caa3c'
+        }));
+
+        myMap.behaviors.disable('scrollZoom');
+      }
+    }, function () {
+      count = 1;
+    });
+  }
+
   const $pointStart = $('.slider').offset().top;
   const $items = $('.price__item');
   const $up = $('.button-up');
   const $pointBtn = $('.offer').offset().top;
+  const $mapInit = $('.feedback').offset().top;
 
   $(window).scroll(() => {
+    if ($(document).scrollTop() >= $mapInit) {
+      ymaps.ready(init());
+    }
+
     if ($(document).scrollTop() >= $pointStart) {
       $items.each((i, item) => {
         $(item).addClass('js-rise');
@@ -149,30 +192,4 @@ $(document).ready(() => {
       $up.addClass('hide-btn');
     }
   });
-
-  let count = 0;
-  ymaps.ready(init());
-
-  function init() {
-      $('.footer__map').hover(function () {
-        if (count === 0) {
-          const myMap = new ymaps.Map("map", {
-            center: [55.43287307, 37.26863050],
-            zoom: 17
-          });
-
-          myMap.geoObjects.add(new ymaps.Placemark([55.43287307, 37.26863050], {
-            balloonContent: '<strong>Мы здесь</strong>'
-          }, {
-            preset: 'islands#circleIcon',
-            iconColor: '#3caa3c'
-          }));
-
-          myMap.behaviors.disable('scrollZoom');
-        }
-      }, function () {
-        count = 1;
-      });
-  }
-
 });
