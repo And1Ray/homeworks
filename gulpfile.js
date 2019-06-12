@@ -89,16 +89,11 @@ gulp.task('build:scripts', () => {
     .pipe(plumber(handleError))
     .pipe(webpack({
       output:       {filename: 'bundle.js'},
-      optimization: {minimize: false},
+      optimization: {minimize: true},
       mode:         'production'
     }))
     .pipe(babel({presets: ['env']}))
     // .pipe(uglify({mangle: false}))
-    .pipe(gulp.dest('build/scripts/'));
-
-  // Простое копирование АПИ
-  gulp.src('src/scripts/api.js')
-    .pipe(plumber(handleError))
     .pipe(gulp.dest('build/scripts/'));
 });
 gulp.task('build:assets', () => {
