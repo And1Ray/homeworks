@@ -1,30 +1,58 @@
+
 <div class="inputs {{ class }}">
-  <div class="inputs__wrap">
-    <input
-      type="text"
-      name="name"
-      placeholder="Ваше имя"
-      v-model="name"
-      @blur="$v.name.$touch()"
-      :class="{'invalid': $v.name.$error}"
-    >
-    <div class="invalid-text" v-if="!$v.name.required && $v.name.$error"><span>Обязательное поле</span></div>
-    <div class="invalid-text" v-if="!$v.name.minLength && $v.name.$error"><span>Минимум 2 символа</span></div>
-    <div class="invalid-text" v-if="!$v.name.maxLength && $v.name.$error"><span>Максимум 15 символов</span></div>
-  </div>
-  <div class="inputs__wrap">
-    <input
-      type="text"
-      name="phone"
-      placeholder="Ваш телефон"
-      v-mask="mask"
-      v-model="phone"
-      @blur="$v.phone.$touch()"
-      :class="{'invalid': $v.phone.$error}"
-    >
-    <div class="invalid-text" v-if="!$v.phone.required && $v.phone.$error"><span>Обязательное поле</span></div>
-  </div>
+  {% if class == 'offer__inputs' %}
+    <div class="inputs__wrap">
+      <input
+        type="text"
+        name="name"
+        placeholder="Ваше имя"
+        v-model="name"
+        @blur="$v.name.$touch()"
+        :class="{'invalid': $v.name.$error}"
+      >
+      <div class="invalid-text" v-if="!$v.name.required && $v.name.$error"><span>Обязательное поле</span></div>
+      <div class="invalid-text" v-if="!$v.name.minLength && $v.name.$error"><span>Минимум 2 символа</span></div>
+      <div class="invalid-text" v-if="!$v.name.maxLength && $v.name.$error"><span>Максимум 15 символов</span></div>
+    </div>
+    <div class="inputs__wrap">
+      <input
+        type="text"
+        name="phone"
+        placeholder="Ваш телефон"
+        v-mask="mask"
+        v-model="phone"
+        @blur="$v.phone.$touch()"
+        :class="{'invalid': $v.phone.$error}"
+      >
+      <div class="invalid-text" v-if="!$v.phone.required && $v.phone.$error"><span>Обязательное поле</span></div>
+    </div>
+  {% endif %}
   {% if class == 'feedback__inputs' %}
+    <div class="inputs__wrap">
+      <input
+        type="text"
+        name="name2"
+        placeholder="Ваше имя"
+        v-model="name2"
+        @blur="$v.name2.$touch()"
+        :class="{'invalid': $v.name2.$error}"
+      >
+      <div class="invalid-text" v-if="!$v.name2.required && $v.name2.$error"><span>Обязательное поле</span></div>
+      <div class="invalid-text" v-if="!$v.name2.minLength && $v.name2.$error"><span>Минимум 2 символа</span></div>
+      <div class="invalid-text" v-if="!$v.name2.maxLength && $v.name2.$error"><span>Максимум 15 символов</span></div>
+    </div>
+    <div class="inputs__wrap">
+      <input
+        type="text"
+        name="phone2"
+        placeholder="Ваш телефон"
+        v-mask="mask"
+        v-model="phone2"
+        @blur="$v.phone2.$touch()"
+        :class="{'invalid': $v.phone2.$error}"
+      >
+      <div class="invalid-text" v-if="!$v.phone2.required && $v.phone2.$error"><span>Обязательное поле</span></div>
+    </div>
     <div class="inputs__wrap">
       <input
         type="email"

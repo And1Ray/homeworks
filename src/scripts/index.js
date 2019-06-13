@@ -15,9 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       email: '',
       name: '',
+      name2: '',
       phone: '',
+      phone2: '',
       mask: '+7(###)###-##-##',
-      check: false
+      check: false,
+      check2: false
     },
     methods: {
       submitFormOffer() {
@@ -34,17 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       },
       submitFormFeedback() {
-        this.check = true;
-        if (!this.$v.$invalid && !this.$v.$error) {
+        this.check2 = true;
+        if (!this.$v.name2.$error && !this.$v.name2.$invalid && !this.$v.phone2.$error && !this.$v.phone2.$invalid && !this.$v.email.$error && !this.$v.email.$invalid) {
           const info = {
             email: this.email,
-            name: this.name,
-            phone: this.phone
+            name2: this.name2,
+            phone2: this.phone2
           };
-          this.check = false;
+          this.check2 = false;
           console.log(`Данные отправлены`, info);
         } else {
-          this.check = true;
+          this.check2 = true;
         }
       }
     },
@@ -58,7 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
         minLength: minLength(2),
         maxLength: maxLength(15)
       },
+      name2: {
+        required,
+        minLength: minLength(2),
+        maxLength: maxLength(15)
+      },
       phone: {
+        required
+      },
+      phone2: {
         required
       }
     }
@@ -163,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ($(document).scrollTop() >= $pointMap && count === 0) {
       $('.footer__map').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa6598ded4d16efd464668430f23da4cf05f682a6e648171fa8a3429d7ae2205c&amp;width=100%25&amp;height=640&amp;lang=ru_RU&amp;scroll=false"></script>');
-      count +=1;
+      count += 1;
     }
 
     if ($(document).scrollTop() >= $pointBtn) {
