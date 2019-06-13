@@ -10,9 +10,11 @@
   font-size:        13px;
   z-index:          5;
 
-  &:hover {
-    background-color: lighten(#ffd200, 10%);
-    cursor:           pointer;
+  @include w-from(991px) {
+    &:hover {
+      background-color: lighten(#ffd200, 10%);
+      cursor:           pointer;
+    }
   }
 }
 

@@ -1,7 +1,11 @@
 .footer {
   width: 100%;
   display: flex;
-  flex-wrap: wrap-reverse;
+
+  @include w-to(991px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
   &__map {
     width: 50.15%;
@@ -26,7 +30,7 @@
     padding: 91px 0 85px;
 
     @include w-to(991px) {
-      width: 100%;
+      width: initial;
     }
 
     @include w-to(768px) {
