@@ -151,6 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const $items = $('.price__item');
   const $up = $('.button-up');
   const $pointBtn = $('.offer').offset().top;
+  const $pointMap = $('.guarantee').offset().top;
+  let count = 0;
 
   $(window).scroll(() => {
     if ($(document).scrollTop() >= $pointStart) {
@@ -159,38 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    if ($(document).scrollTop() >= $pointMap && count === 0) {
+      $('.footer__map').append('<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa6598ded4d16efd464668430f23da4cf05f682a6e648171fa8a3429d7ae2205c&amp;width=100%25&amp;height=640&amp;lang=ru_RU&amp;scroll=false"></script>');
+      count +=1;
+    }
+
     if ($(document).scrollTop() >= $pointBtn) {
-      $up.removeClass('hide-btn').addClass('show-btn');;
+      $up.removeClass('hide-btn').addClass('show-btn');
     } else if ($(document).scrollTop() === 0) {
       $up.removeClass('show-btn').addClass('hide-btn');
     }
   });
-
-
-  //map
-  let count = 0;
-  ymaps.ready(init());
-
-  function init() {
-    $('.footer__map').hover(function () {
-      if (count === 0) {
-        const myMap = new ymaps.Map("map", {
-          center: [55.43287307, 37.26863050],
-          zoom: 17
-        });
-
-        myMap.geoObjects.add(new ymaps.Placemark([55.43287307, 37.26863050], {
-          balloonContent: '<strong>Мы здесь</strong>'
-        }, {
-          preset: 'islands#circleIcon',
-          iconColor: '#3caa3c'
-        }));
-
-        myMap.behaviors.disable('scrollZoom');
-      }
-    }, function () {
-      count = 1;
-    });
-  }
 
 });
